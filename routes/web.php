@@ -19,15 +19,3 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 
 Route::get('/contact', [HomeController::class, 'contact']);
-
-Route::get('/hello', function () {
-    return "1+1=2";
-});
-
-Route::get('/hello/{name}', function ($name) {
-    return "Hi $name";
-});
-
-Route::get('/calculator/{num1}/{num2}', function ($num1, $num2) {
-    return "$num1+$num2 = " .($num1+$num2);
-});
