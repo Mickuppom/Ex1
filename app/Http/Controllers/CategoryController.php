@@ -23,4 +23,23 @@ class CategoryController extends Controller
         $category->save();
         return redirect('/category');
     }
+    public function edit($id){
+        $category = Category::find($id);
+        $data = [
+            'category' => $category
+        ];
+        return view('category.edit', $data);
+    }
+    public function delete($id){
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('/category');
+    }
+    public function update(Request $request, $id){
+        $name = $request->input('name');
+        $category = Category::find($id);
+        $category->name = $name;
+        $category->save();
+        return redirect('/category');
+    }
 }

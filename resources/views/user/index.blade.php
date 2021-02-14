@@ -1,8 +1,8 @@
 @extends('layout.master')
 
 @section('content')
-    <h1>News Categories</h1>
-
+    <h1>User</h1>
+    <a href="/user/create">Add new user</a><br><br>
     <table>
         <thead>
             <tr>
@@ -20,7 +20,7 @@
                 <td>{{$user->name}}</td>
                 <td>{{$user->username}}</td>
                 <td>{{$user->created_at}}</td>
-                <td>แก้ไข | ลบ</td>
+                <td><a href="/user/edit/{{$user->id}}"> แก้ไข</a> | <a href="/user/delete/{{$user->id}}">ลบ</a></td>
             </tr>
             @endforeach
         </tbody>
