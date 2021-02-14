@@ -41,3 +41,4 @@ Route::get('/auth/login', [AuthController::class, 'login']);
 Route::post('/auth/doLogin', [AuthController::class, 'doLogin']);
 Route::get('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/doRegister', [AuthController::class, 'doRegister']);
+Route::get('/auth/logout', [AuthController::class, 'logout']);

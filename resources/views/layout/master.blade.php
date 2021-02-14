@@ -8,6 +8,7 @@
 </head>
 <body>
     <a href="/">HOME</a> | <a href="about">ABOUT</a> | <a href="contact">CONTACT</a>
+    <br> Hello,@If(auth()->check()) {{auth()->user()->name}} <a href="/auth/logout">LOGOUT</a> @else someone @endif
     @yield("content")
     <hr>
     &copy; 2021 xMiCx
