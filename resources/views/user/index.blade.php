@@ -9,6 +9,7 @@
                 <td>NO.</td>
                 <td>Name</td>
                 <td>UserName</td>
+                <td>Email</td>
                 <td>Create Date</td>
                 <td>Manage</td>
             </tr>
@@ -19,6 +20,7 @@
                 <td>{{$user->id}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->username}}</td>
+                <td>{{$user->email}}</td>
                 <td>{{$user->created_at}}</td>
                 <td><a href="/user/edit/{{$user->id}}"> แก้ไข</a> | <a href="/user/delete/{{$user->id}}">ลบ</a></td>
             </tr>
