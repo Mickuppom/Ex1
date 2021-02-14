@@ -5,10 +5,11 @@
     <form action="/post/store" method="post">
         @csrf
         Title: <input type="text" name="title" required><br><br>
-        Thumbnail: <input type="text" name="thumbnail" required><br><br>
-        User_ID: <input type="text" name="user_id" required><br><br>
-        Category: <input type="text" name="category_id" required><br><br>
-        Details: <input type="text" name="details" required><br><br>
+        Thumbnail: <input type="file" name="thumbnail" required><br><br>
+        Category: <select name="category_id" id="">
+            <option value=""> </option>
+        </select><br><br>
+        Details: <textarea name="details" id="" cols="30" rows="10"></textarea><br><br>
         <button type="submit">SAVE</button>
     </form>
 @endsection

@@ -11,7 +11,6 @@
                 <td>Thumbnail</td>
                 <td>User</td>
                 <td>Category</td>
-                <td>Details</td>
                 <td>Create Date</td>
                 <td>Manage</td>
             </tr>
@@ -24,7 +23,6 @@
                 <td>{{$item->thumbnail}}</td>
                 <td>{{$item->user_id}}</td>
                 <td>{{$item->category_id}}</td>
-                <td>{{$item->details}}</td>
                 <td>{{$item->created_at}}</td>
                 <td><a href="/post/edit/{{$item->id}}"> แก้ไข</a> | <a href="/post/delete/{{$item->id}}">ลบ</a></td>
             </tr>
