@@ -20,7 +20,7 @@
             <tr>
                 <td>{{$item->id}}</td>
                 <td>{{$item->title}}</td>
-                <td>{{$item->thumbnail}}</td>
+                <td><img src="{{storage_path($item->thumbnail)}}" /></td>
                 <td>{{$item->user_id}}</td>
                 <td>{{$item->category_id}}</td>
                 <td>{{$item->created_at}}</td>
