@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -14,17 +15,27 @@ class PostController extends Controller
         return view('post.index', $data);
     }
     public function create(){
-        return view('post.create');
+        $data = [
+            'categories' => Category::all(),
+        ];
+        return view('post.create', $data);
     }
     public function store(Request $request){
+
+        if ($request->hasFile('thumbnail')) {
+            $path = $request->file('thumbnail')->store('thumbnail') ;
+        }
+        else {
+            $path = "http://via.placeholder.com/150x150";
+        }
         $title = $request->input('title');
-        $thumbnail = $request->input('thumbnail');
-        $user_id = $request->input('user_id');
+        $user_id = auth()->user()->id;
         $category_id = $request->input('category_id');
         $details = $request->input('details');
+
         $post = new Post();
         $post->title = $title;
-        $post->thumbnail = $thumbnail;
+        $post->thumbnail = $path;
         $post->user_id = $user_id;
         $post->category_id = $category_id;
         $post->details = $details;
